@@ -1,0 +1,24 @@
+<div class="admin-universities-container">
+    <h2>All Universities</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>University Name</th>
+          <th>Email</th>
+          <th>Accreditation</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let university of universities">
+          <td>{{ university.UniName }}</td>
+          <td>{{ university.UniEmail }}</td>
+          <td>{{ university.accreditation ? 'Yes' : 'No' }}</td>
+          <td>
+            <button (click)="deleteUniversity(university.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,134 @@
+<!-- profile.component.html -->
+<div class="profile-container">
+    <h1>Profile</h1>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <ng-container *ngIf="profileType === 'user'">
+        <div *ngIf="isEditing">
+          <!-- Form fields for editing user profile -->
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" formControlName="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" formControlName="email" />
+          </div>
+          <div class="form-group">
+            <label for="major">Major</label>
+            <input id="major" formControlName="major" />
+          </div>
+          <div class="form-group">
+            <label for="startDate">Start Date</label>
+            <input id="startDate" type="date" formControlName="startDate" />
+          </div>
+          <div class="form-group">
+            <label for="gradDate">Graduation Date</label>
+            <input id="gradDate" type="date" formControlName="gradDate" />
+          </div>
+          <div class="form-group">
+            <label for="cvFile">CV</label>
+            <input id="cvFile" type="file" (change)="onFileChange($event, 'cvFile')" />
+          </div>
+       
+          <div class="form-group">
+            <label for="gpa">GPA</label>
+            <input id="gpa" type="number" formControlName="gpa" />
+          </div>
+          <div class="form-group">
+            <label for="nationalID">National ID</label>
+            <input id="nationalID" formControlName="nationalID" />
+          </div>
+        </div>
+        <ng-container *ngIf="!isEditing">
+          <!-- Display user info here -->
+          <div class="profile-info">
+            <p><strong>Name:</strong> {{ user?.name }}</p>
+            <p><strong>Email:</strong> {{ user?.email }}</p>
+            <p><strong>Major:</strong> {{ user?.major }}</p>
+            <p><strong>Start Date:</strong> {{ user?.startDate | date }}</p>
+            <p><strong>Graduation Date:</strong> {{ user?.gradDate | date }}</p>
+            <p><strong>GPA:</strong> {{ user?.gpa }}</p>
+            <p><strong>National ID:</strong> {{ user?.nationalID }}</p>
+            <p><strong>Portfolio:</strong> <a [href]="user?.portfolio" target="_blank">View Portfolio</a></p>
+            <p *ngIf="user?.cvFile">CV: <a [href]="user?.cvFile" target="_blank">Download CV</a></p>
+          </div>
+        </ng-container>
+      </ng-container>
+  
+      <ng-container *ngIf="profileType === 'company'">
+        <div *ngIf="isEditing">
+          <!-- Form fields for editing company profile -->
+          <div class="form-group">
+            <label for="companyName">Company Name</label>
+            <input id="companyName" formControlName="companyName" />
+          </div>
+          <div class="form-group">
+            <label for="companyEmail">Company Email</label>
+            <input id="companyEmail" formControlName="companyEmail" />
+          </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input id="location" formControlName="location" />
+          </div>
+          <div class="form-group">
+            <label for="companyLogo">Company Logo</label>
+            <input id="companyLogo" type="file" (change)="onFileChange($event, 'companyLogo')" />
+          </div>
+          <div class="form-group">
+            <label for="companyDesc">Company Description</label>
+            <textarea id="companyDesc" formControlName="companyDesc"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="websiteLink">Website Link</label>
+            <input id="websiteLink" formControlName="websiteLink" />
+          </div>
+          <div class="form-group">
+            <label for="industry">Industry</label>
+            <input id="industry" formControlName="industry" />
+          </div>
+        </div>
+        <ng-container *ngIf="!isEditing">
+          <!-- Display company info here -->
+          <div class="profile-info">
+            <p><strong>Company Name:</strong> {{ company?.companyName }}</p>
+            <p><strong>Company Email:</strong> {{ company?.companyEmail }}</p>
+            <p><strong>Location:</strong> {{ company?.location }}</p>
+            <p><strong>Company Description:</strong> {{ company?.companyDesc }}</p>
+            <p><strong>Website Link:</strong> <a [href]="company?.websiteLink" target="_blank">Visit Website</a></p>
+            <p><strong>Industry:</strong> {{ company?.industry }}</p>
+            <p *ngIf="company?.companyLogo">Company Logo: <img [src]="company?.companyLogo" alt="Company Logo" width="100" /></p>
+          </div>
+        </ng-container>
+      </ng-container>
+  
+      <ng-container *ngIf="profileType === 'university'">
+        <div *ngIf="isEditing">
+          <!-- Form fields for editing university profile -->
+          <div class="form-group">
+            <label for="uniName">University Name</label>
+            <input id="uniName" formControlName="UniName" />
+          </div>
+          <div class="form-group">
+            <label for="uniEmail">University Email</label>
+            <input id="uniEmail" formControlName="UniEmail" />
+          </div>
+          <div class="form-group">
+            <label for="accreditation">Accreditation</label>
+            <input id="accreditation" type="checkbox" formControlName="accreditation" />
+          </div>
+        </div>
+        <ng-container *ngIf="!isEditing">
+          <!-- Display university info here -->
+          <div class="profile-info">
+            <p><strong>University Name:</strong> {{ university?.UniName }}</p>
+            <p><strong>University Email:</strong> {{ university?.UniEmail }}</p>
+            <p><strong>Accreditation:</strong> {{ university?.accreditation ? 'Accredited' : 'Not Accredited' }}</p>
+          </div>
+        </ng-container>
+      </ng-container>
+  
+      <button type="button" (click)="toggleEdit()">{{ isEditing ? 'Cancel' : 'Edit' }}</button>
+      <button type="submit" *ngIf="isEditing">Save</button>
+    </form>
+  </div>
+  

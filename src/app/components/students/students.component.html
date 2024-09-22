@@ -1,0 +1,26 @@
+<div class="students-container">
+    <h2>Students from Your University</h2>
+    <table class="students-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Major</th>
+          <th>Company</th>
+          <th>Internship Category</th>
+          <th>Status</th>
+          <th>Evaluation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td>{{ student.name }}</td>
+          <td>{{ student.major }}</td>
+          <td>{{ student.company }}</td>
+          <td>{{ student.category }}</td>
+          <td>{{ student.status }}</td>
+          <td>{{ student.evaluation ? student.evaluation : 'Not Evaluated' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

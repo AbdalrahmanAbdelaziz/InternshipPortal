@@ -1,0 +1,76 @@
+/* Requests Container */
+.requests-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #3498db;
+  font-size: 28px;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+
+.requests-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.requests-table th, .requests-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 16px;
+}
+
+.requests-table th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: 600;
+}
+
+.requests-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.requests-table tr:hover {
+  background-color: #e9ecef;
+}
+
+.btn {
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-accept {
+  background-color: #28a745;
+}
+
+.btn-accept:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.btn-reject {
+  background-color: #dc3545;
+}
+
+.btn-reject:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}

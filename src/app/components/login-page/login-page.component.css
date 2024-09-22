@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #f4f7f6;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 2rem;
+    /* Use a negative margin to shift content up */
+    margin-top: -2rem; /* Adjust this value as needed */
+  }
+  
+  .logo-container {
+    width: 100%; /* Full width to ensure the image is centered properly */
+    text-align: center; /* Center the image within the container */
+    margin-bottom: 1.5rem; /* Adjust space between image and form */
+  }
+  
+  .logo-container img {
+    max-width: 70%; /* Adjusted to make the image bigger */
+    max-height: 40vh; /* Adjusted to ensure image doesn’t take up too much vertical space */
+    height: auto;
+  }
+  
+  .details {
+    width: 100%;
+    max-width: 500px; /* Limit the width of the form */
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2.form-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-container {
+    margin-bottom: 1.5rem;
+  }
+  
+  label {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+  }
+  
+  input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .error-list {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #e74c3c;
+  }
+  
+  .button {
+    margin-top: 2rem;
+  }
+  
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  
+  
+  /* For smaller screens */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .logo-container {
+      margin-bottom: 2rem;
+    }
+  
+    .details {
+      width: 90%;
+      max-width: none;
+    }
+  }
+
+
+  

@@ -1,0 +1,67 @@
+<!-- company-register-page.component.html -->
+<div class="container">
+    <div class="logo-container">
+      <img src="logo.jpg" alt="Logo" class="logo">
+    </div>
+
+    <div class="details">
+      <h2 class="form-title">Company Register</h2>
+
+      <form [formGroup]="registerForm" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label for="companyName">Company Name</label>
+          <input id="companyName" type="text" formControlName="companyName" class="form-control" [class.is-invalid]="fc.companyName.touched && fc.companyName.invalid">
+          <div *ngIf="fc.companyName.touched && fc.companyName.invalid" class="invalid-feedback">Company name is required.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="companyEmail">Email</label>
+          <input id="companyEmail" type="email" formControlName="companyEmail" class="form-control" [class.is-invalid]="fc.companyEmail.touched && fc.companyEmail.invalid">
+          <div *ngIf="fc.companyEmail.touched && fc.companyEmail.invalid" class="invalid-feedback">Valid email is required.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="companyPassword">Password</label>
+          <input id="companyPassword" type="password" formControlName="companyPassword" class="form-control" [class.is-invalid]="fc.companyPassword.touched && fc.companyPassword.invalid">
+          <div *ngIf="fc.companyPassword.touched && fc.companyPassword.invalid" class="invalid-feedback">Password is required.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="companyConfirmPassword">Confirm Password</label>
+          <input id="companyConfirmPassword" type="password" formControlName="companyConfirmPassword" class="form-control" [class.is-invalid]="fc.companyConfirmPassword.touched && fc.companyConfirmPassword.invalid">
+          <div *ngIf="fc.companyConfirmPassword.touched && fc.companyConfirmPassword.invalid" class="invalid-feedback">Confirm password is required.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input id="location" type="text" formControlName="location" class="form-control">
+        </div>
+
+       
+
+        <div class="form-group">
+          <label for="companyLogo">Company Logo</label>
+          <input id="companyLogo" type="file" formControlName="companyLogo" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="companyDesc">Company Description</label>
+          <textarea id="companyDesc" formControlName="companyDesc" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="websiteLink">Website Link</label>
+          <input id="websiteLink" type="text" formControlName="websiteLink" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="industry">Industry</label>
+          <input id="industry" type="text" formControlName="industry" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn-submit" [disabled]="registerForm.invalid">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>

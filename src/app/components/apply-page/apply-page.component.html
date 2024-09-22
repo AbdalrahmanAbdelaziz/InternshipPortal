@@ -1,0 +1,43 @@
+<!-- apply-page.component.html -->
+<div class="apply-page-container">
+  <h2>Apply Page</h2>
+  <form [formGroup]="applyForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name" type="text" readonly />
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" type="email" readonly />
+    </div>
+    <div class="form-group">
+      <label for="major">Major:</label>
+      <input id="major" formControlName="major" type="text" readonly />
+    </div>
+    <div class="form-group">
+      <label for="startDate">Start Date:</label>
+      <input id="startDate" formControlName="startDate" type="date" readonly />
+    </div>
+    <div class="form-group">
+      <label for="gradDate">Graduation Date:</label>
+      <input id="gradDate" formControlName="gradDate" type="date" readonly />
+    </div>
+    <div class="form-group">
+      <label for="nationalID">National ID:</label>
+      <input id="nationalID" formControlName="nationalID" type="text" readonly />
+    </div>
+    <div class="form-group">
+      <label for="portfolio">Portfolio:</label>
+      <input id="portfolio" formControlName="portfolio" type="text" readonly />
+    </div>
+    <div class="form-group">
+      <label for="cvFile">CV File:</label>
+      <input id="cvFile" formControlName="cvFile" type="file" (change)="onFileChange($event)" />
+    </div>
+    <div class="form-group">
+      <label for="gpa">GPA:</label>
+      <input id="gpa" formControlName="gpa" type="number" step="0.01" />
+    </div>
+    <button type="submit" [disabled]="!applyForm.valid">Submit</button>
+  </form>
+</div>

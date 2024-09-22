@@ -1,0 +1,44 @@
+<app-not-found
+[visible]="!post"
+notFoundMessage="Program Not Found"
+resetLinkText="Back To HomePage"
+></app-not-found>
+
+<div *ngIf="post" class="post-container">
+  <div class="company-header">
+    <img [src]="post.companyImage" alt="Company Logo" class="company-logo"/>
+    <div class="company-info">
+      <h1>{{ post.company }}</h1>
+      <span>{{ post.location }}</span>
+    </div>
+  </div>
+  
+  <div class="company-actions">
+    <!-- <button class="follow-button">Follow</button> -->
+    <a [href]="" target="_blank" class="website-button">Website</a>
+  </div>
+</div>
+
+<div class="objectives-container">
+  <h2>Objectives</h2>
+  <p>{{ post.objectives }}</p>
+</div>
+
+<div class="internships-container">
+  <h2>Internships</h2>
+  <div *ngFor="let internship of post.internships" class="internship-post">
+    <h3>{{ internship.title }}</h3>
+    <p><strong>Category:</strong> {{ internship.category }}</p>
+    <p><strong>Duration:</strong> {{ internship.duration }}</p>
+    <p><strong>Application Deadline:</strong> {{ internship.applicationDeadline }}</p>
+    <p><strong>Description:</strong> {{ internship.shortDescription }}</p>
+    <div class="internship-actions">
+      <button class="apply-button" (click)="applyNow(internship.id)">
+        <i class="fa fa-check-circle"></i>
+        Apply
+      </button>
+      
+      
+    </div>
+  </div>
+</div>

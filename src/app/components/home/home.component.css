@@ -1,0 +1,90 @@
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin: 1rem;
+}
+
+li a {
+  height: 26rem; 
+  width: 22rem;
+  border: 1px solid #42c1c7;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: whitesmoke;
+  /* box-shadow: 0 4px 8px #42c1c7; */
+  transition: all 0.3s ease-in-out;
+  color: black;
+  text-decoration: none;
+}
+
+li a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px #009f59;
+  cursor: pointer;
+}
+
+li a img {
+  object-fit: cover;
+  height: 16rem; /* Increased image height */
+  width: 100%;
+  border-bottom: 1px solid #42c1c7;
+}
+
+.content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* .title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e72929;
+  margin-bottom: 0.5rem;
+} */
+
+.company {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #503996;
+  margin-bottom: 0.5rem;
+}
+
+.duration, .applicationDeadline, .category, .shortDescription {
+  font-size: 0.9rem;
+  color: black;
+  margin-bottom: 0.3rem;
+}
+
+/* li a:hover .title {
+  color: #ff5151;
+} */
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  li a {
+      width: 18rem;
+      height: 23rem;  
+  }
+
+  .title {
+      font-size: 1rem;
+  }
+
+  .content {
+      padding: 0.75rem;
+  }
+}

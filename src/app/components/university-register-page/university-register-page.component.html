@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="logo-container">
+      <img src="logo.jpg" alt="Logo" class="logo">
+    </div>
+  
+    <div class="details">
+      <h2 class="form-title">University Register</h2>
+  
+      <form [formGroup]="registerForm" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label for="UniName">University Name</label>
+          <input id="UniName" type="text" formControlName="UniName" class="form-control" [class.is-invalid]="fc.UniName.touched && fc.UniName.invalid">
+          <div *ngIf="fc.UniName.touched && fc.UniName.invalid" class="invalid-feedback">University name is required.</div>
+        </div>
+  
+        <div class="form-group">
+          <label for="UniEmail">Email</label>
+          <input id="UniEmail" type="email" formControlName="UniEmail" class="form-control" [class.is-invalid]="fc.UniEmail.touched && fc.UniEmail.invalid">
+          <div *ngIf="fc.UniEmail.touched && fc.UniEmail.invalid" class="invalid-feedback">Valid email is required.</div>
+        </div>
+  
+        <div class="form-group">
+          <label for="UniPassword">Password</label>
+          <input id="UniPassword" type="password" formControlName="UniPassword" class="form-control" [class.is-invalid]="fc.UniPassword.touched && fc.UniPassword.invalid">
+          <div *ngIf="fc.UniPassword.touched && fc.UniPassword.invalid" class="invalid-feedback">Password is required.</div>
+        </div>
+  
+        <div class="form-group">
+          <label for="UniConfirmPassword">Confirm Password</label>
+          <input id="UniConfirmPassword" type="password" formControlName="UniConfirmPassword" class="form-control" [class.is-invalid]="fc.UniConfirmPassword.touched && fc.UniConfirmPassword.invalid">
+          <div *ngIf="fc.UniConfirmPassword.touched && fc.UniConfirmPassword.invalid" class="invalid-feedback">Confirm password is required.</div>
+        </div>
+  
+        <div class="form-group">
+          <label>Accreditation</label>
+          <div class="radio-group">
+            <label>
+              <input type="radio" formControlName="accreditation" value="National" [class.is-invalid]="fc.accreditation.touched && fc.accreditation.invalid">
+            Yes
+            </label>
+            <label>
+              <input type="radio" formControlName="accreditation" value="International" [class.is-invalid]="fc.accreditation.touched && fc.accreditation.invalid">
+              No
+            </label>
+         
+          </div>
+          <div *ngIf="fc.accreditation.touched && fc.accreditation.invalid" class="invalid-feedback">Accreditation is required.</div>
+        </div>
+  
+        <div class="form-group">
+          <button type="submit" class="btn-submit" [disabled]="registerForm.invalid">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,97 @@
+.role-selection-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #00f2fe 0%, #ffffff 100%);
+  font-family: 'Arial', sans-serif;
+  text-align: center; /* Center align text for h2 */
+}
+
+h2 {
+  margin: 0;
+  padding: 20px;
+  font-size: 36px; /* Increased font size for emphasis */
+  font-weight: bold;
+  color: #503996; /* Vibrant color for visibility */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  letter-spacing: 1.5px; /* Increased letter spacing for a more refined look */
+  border-bottom: 3px solid #503996; /* Bottom border to highlight the heading */
+  display: inline-block; /* Ensures border is visible only under the text */
+  margin-bottom: 40px; /* Space below the heading */
+}
+
+.roles {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.roles button {
+  background-color: #ee3e80;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.roles button:hover {
+  background-color: #fff;
+  color: #ee3e80;
+  border-color: #ee3e80;
+  transform: translateY(-5px);
+}
+
+.roles button:active {
+  transform: translateY(0);
+}
+
+.register-button {
+  background-color: #ff5722; /* Adjust the color as needed */
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.register-button:hover {
+  background-color: #fff;
+  color: #ff5722; /* Adjust the color as needed */
+  border-color: #ff5722; /* Adjust the color as needed */
+  transform: translateY(-5px);
+}
+
+.register-button:active {
+  transform: translateY(0);
+}
+
+.footer {
+  margin-top: 30px;
+  font-size: 16px;
+  color: #00f2fe;
+  text-align: center;
+}
+
+.footer a {
+  color: #00f2fe;
+  text-decoration: underline;
+}
+
+.footer a:hover {
+  color: #4facfe;
+}

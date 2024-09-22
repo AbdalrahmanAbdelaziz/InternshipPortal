@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="logo-container">
+      <img src="logo.jpg" alt="Logo" class="logo">
+    </div>
+  
+    <div class="details">
+      <h2 class="form-title">Register</h2>
+  
+      <form [formGroup]="registerForm" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input id="name" type="text" formControlName="name" class="form-control" [class.is-invalid]="fc.name.touched && fc.name.invalid">
+          <div *ngIf="fc.name.touched && fc.name.invalid" class="invalid-feedback">Name is required.</div>
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" formControlName="email" class="form-control" [class.is-invalid]="fc.email.touched && fc.email.invalid">
+          <div *ngIf="fc.email.touched && fc.email.invalid" class="invalid-feedback">Valid email is required.</div>
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" formControlName="password" class="form-control" [class.is-invalid]="fc.password.touched && fc.password.invalid">
+          <div *ngIf="fc.password.touched && fc.password.invalid" class="invalid-feedback">Password is required.</div>
+        </div>
+  
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input id="confirmPassword" type="password" formControlName="ConfirmPassword" class="form-control" [class.is-invalid]="fc.ConfirmPassword.touched && fc.ConfirmPassword.invalid">
+          <div *ngIf="fc.ConfirmPassword.touched && fc.ConfirmPassword.invalid" class="invalid-feedback">Confirm password is required.</div>
+        </div>
+  
+        <div class="form-group">
+          <label for="major">Major</label>
+          <input id="major" type="text" formControlName="major" class="form-control" [class.is-invalid]="fc.major.touched && fc.major.invalid">
+          <div *ngIf="fc.major.touched && fc.major.invalid" class="invalid-feedback">Major is required.</div>
+        </div>
+  
+        <div class="form-group">
+          <label for="startDate">Start Date</label>
+          <input id="startDate" type="date" formControlName="startDate" class="form-control" [class.is-invalid]="fc.startDate.touched && fc.startDate.invalid">
+          <div *ngIf="fc.startDate.touched && fc.startDate.invalid" class="invalid-feedback">Start date is required.</div>
+        </div>
+  
+        <div class="form-group">
+          <label for="gradDate">Graduation Date</label>
+          <input id="gradDate" type="date" formControlName="gradDate" class="form-control" [class.is-invalid]="fc.gradDate.touched && fc.gradDate.invalid">
+          <div *ngIf="fc.gradDate.touched && fc.gradDate.invalid" class="invalid-feedback">Graduation date is required.</div>
+        </div>
+  
+        <div class="form-group">
+          <label for="cvFile">Upload CV</label>
+          <input id="cvFile" type="file" formControlName="cvFile" class="form-control" [class.is-invalid]="fc.cvFile.touched && fc.cvFile.invalid">
+          <div *ngIf="fc.cvFile.touched && fc.cvFile.invalid" class="invalid-feedback">CV is required.</div>
+        </div>
+  
+        <div class="form-group">
+          <label for="portfolio">Portfolio Link</label>
+          <input id="portfolio" type="text" formControlName="portfolio" class="form-control" [class.is-invalid]="fc.portfolio.touched && fc.portfolio.invalid">
+          <div *ngIf="fc.portfolio.touched && fc.portfolio.invalid" class="invalid-feedback">Portfolio is required.</div>
+        </div>
+  
+        <div class="form-group">
+          <label for="gpa">GPA</label>
+          <input id="gpa" type="text" formControlName="gpa" class="form-control" [class.is-invalid]="fc.gpa.touched && fc.gpa.invalid">
+          <div *ngIf="fc.gpa.touched && fc.gpa.invalid" class="invalid-feedback">GPA is required.</div>
+        </div>
+  
+        <div class="form-group">
+          <label for="nationalID">National ID</label>
+          <input id="nationalID" type="text" formControlName="nationalID" class="form-control" [class.is-invalid]="fc.nationalID.touched && fc.nationalID.invalid">
+          <div *ngIf="fc.nationalID.touched && fc.nationalID.invalid" class="invalid-feedback">National ID is required.</div>
+        </div>
+  
+        <div class="form-group">
+          <button type="submit" class="btn-submit" [disabled]="registerForm.invalid">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

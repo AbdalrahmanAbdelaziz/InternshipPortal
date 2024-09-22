@@ -1,0 +1,23 @@
+<div class="admin-post-requests-container">
+    <h2>Post Requests from Companies</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Post Content</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of postRequests">
+          <td>{{ request.companyName }}</td>
+          <td>{{ request.postContent }}</td>
+          <td>
+            <button (click)="approveRequest(request.id)">Approve</button>
+            <button (click)="rejectRequest(request.id)">Reject</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

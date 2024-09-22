@@ -1,0 +1,22 @@
+<header>
+  <div class="container">
+    <a routerLink="/" class="logo">
+      <img src="logo.jpg" alt="Iscore Logo">
+    </a>
+
+    <nav *ngIf="isAuth">
+      <ul>
+        <li class="menu-container">
+          <a routerLink="/dashboard">{{ displayName }}</a>
+          <div class="menu">
+            <!-- Profile link only if role is not admin -->
+            <a *ngIf="!isAdminRole()" routerLink="/profile">Profile</a>
+            <a *ngIf="isStudentRole()" routerLink="/internships">Internships</a>
+            <a (click)="logout()">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+  

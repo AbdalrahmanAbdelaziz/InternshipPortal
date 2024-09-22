@@ -1,0 +1,65 @@
+<div class="trainees-container">
+    <h2>Trainees Information</h2>
+  
+    <div *ngIf="inProgressTrainees.length > 0">
+      <h3>Trainees In Progress</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>University</th>
+            <th>Major</th>
+            <th>GPA</th>
+            <th>Internship</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let trainee of inProgressTrainees">
+            <td>{{ trainee.name }}</td>
+            <td>{{ trainee.university }}</td>
+            <td>{{ trainee.major }}</td>
+            <td>{{ trainee.gpa }}</td>
+            <td>{{ trainee.internshipName }}</td>
+            <td>{{ trainee.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div *ngIf="doneTrainees.length > 0">
+      <h3>Trainees Done</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>University</th>
+            <th>Major</th>
+            <th>GPA</th>
+            <th>Internship</th>
+            <th>Status</th>
+            <th>Evaluation</th>
+            <th>Certificate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let trainee of doneTrainees">
+            <td>{{ trainee.name }}</td>
+            <td>{{ trainee.university }}</td>
+            <td>{{ trainee.major }}</td>
+            <td>{{ trainee.gpa }}</td>
+            <td>{{ trainee.internshipName }}</td>
+            <td>{{ trainee.status }}</td>
+            <td>
+              <textarea [(ngModel)]="trainee.evaluation" [readonly]="!isEditable(trainee.status)" placeholder="Enter evaluation"></textarea>
+            </td>
+            <td>
+              <input type="file" (change)="onFileChange($event, trainee)" [disabled]="!isEditable(trainee.status)" />
+              <a *ngIf="trainee.certificateUrl" [href]="trainee.certificateUrl" target="_blank">View Certificate</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

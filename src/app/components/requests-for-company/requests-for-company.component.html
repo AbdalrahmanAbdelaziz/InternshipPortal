@@ -1,0 +1,26 @@
+<div class="requests-container">
+    <h2>Internship Requests</h2>
+  
+    <table class="requests-table">
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Email</th>
+          <th>Internship Title</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of requests">
+          <td>{{ request.studentName }}</td>
+          <td>{{ request.studentEmail }}</td>
+          <td>{{ request.internshipTitle }}</td>
+          <td>
+            <button class="btn btn-accept" (click)="acceptRequest(request.id)">Accept</button>
+            <button class="btn btn-reject" (click)="rejectRequest(request.id)">Reject</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

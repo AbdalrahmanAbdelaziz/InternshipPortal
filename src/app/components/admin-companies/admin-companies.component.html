@@ -1,0 +1,32 @@
+<div class="admin-companies-container">
+    <h2>All Companies</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Email</th>
+          <th>Location</th>
+          <th>Accreditation</th>
+          <th>Description</th>
+          <th>Website Link</th>
+          <th>Industry</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let company of companies">
+          <td>{{ company.companyName }}</td>
+          <td>{{ company.companyEmail }}</td>
+          <td>{{ company.location }}</td>
+          <td>{{ company.accreditation }}</td>
+          <td>{{ company.companyDesc }}</td>
+          <td><a [href]="company.websiteLink" target="_blank">{{ company.websiteLink }}</a></td>
+          <td>{{ company.industry }}</td>
+          <td>
+            <button (click)="deleteCompany(company.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,35 @@
+<div class="admin-trainees-container">
+  <h2>All Students</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Major</th>
+        <th>Start Date</th>
+        <th>Grad Date</th>
+        <th>GPA</th>
+        <th>National ID</th>
+        <th>University</th>
+        <th>Internship Company</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{ student.name }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.major }}</td>
+        <td>{{ student.startDate | date }}</td>
+        <td>{{ student.gradDate | date }}</td>
+        <td>{{ student.gpa }}</td>
+        <td>{{ student.nationalID }}</td>
+        <td>{{ student.university.name }}</td> <!-- Assuming university is an object with a name property -->
+        <td>{{ student.internship.companyName }}</td> <!-- Assuming internship is an object with a companyName property -->
+        <td>
+          <button (click)="deleteStudent(student.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

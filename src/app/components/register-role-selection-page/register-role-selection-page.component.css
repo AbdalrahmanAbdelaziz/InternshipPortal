@@ -1,0 +1,56 @@
+.register-role-selection-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #00f2fe 0%, #ffffff 100%);
+  font-family: 'Arial', sans-serif;
+  text-align: center; /* Center align text for h2 */
+}
+
+h2 {
+  margin: 0;
+  padding: 20px;
+  font-size: 36px; /* Larger font size for emphasis */
+  font-weight: 700; /* Bold font weight for strong emphasis */
+  color: #503996; /* Vibrant color for contrast */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Enhanced shadow for better depth */
+  letter-spacing: 2px; /* Increased letter spacing for readability */
+  border-bottom: 4px solid #503996; /* Thick border for emphasis */
+  display: inline-block; /* Ensures border is visible only under the text */
+  margin-bottom: 40px; /* Space below the heading */
+  text-transform: uppercase; /* Capitalized text for uniformity */
+}
+
+.roles {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.roles button {
+  background-color: #ffcc32;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.roles button:hover {
+  background-color: #fff;
+  color: #ffcc32;
+  border-color: #ffcc32;
+  transform: translateY(-5px);
+}
+
+.roles button:active {
+  transform: translateY(0);
+}

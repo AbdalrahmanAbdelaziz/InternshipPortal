@@ -1,0 +1,105 @@
+.choose-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background: linear-gradient(135deg, #00f2fe 0%, #ffffff 100%); */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 40px;
+}
+
+.logo {
+    width: 250px; /* Increased size for better visibility */
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Rounded corners for a more polished look */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow for a 3D effect */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.logo:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+
+
+h2 {
+    font-size: 60px; /* Increased size for emphasis */
+    font-weight: bold;
+    color: #503996 /* Updated color for contrast and impact */
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Login-button,
+.register-button {
+    background-color: #00f2fe;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    outline: none;
+    border: none;
+}
+
+.Login-button {
+    background-color: #503996;
+}
+
+.Login-button:hover {
+    background-color: #fff;
+    color: #503996;
+    border-color: #503996;
+    transform: translateY(-5px);
+}
+
+.Login-button:active {
+    transform: translateY(0);
+}
+
+.register-button {
+    background-color: #503996;
+}
+
+.register-button:hover {
+    background-color: #fff;
+    color: #503996;
+    border-color: #503996;
+    transform: translateY(-5px);
+}
+
+.register-button:active {
+    transform: translateY(0);
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 16px;
+    color: #00f2fe;
+    text-align: center;
+}
+
+.footer a {
+    color: #00f2fe;
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    color: #4facfe;
+}

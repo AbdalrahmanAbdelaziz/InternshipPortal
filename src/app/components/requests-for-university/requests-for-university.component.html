@@ -1,0 +1,24 @@
+<!-- requests-for-university.component.html -->
+<div class="requests-for-university-container">
+    <h2>Student Requests</h2>
+    <table class="requests-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Major</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of requests">
+          <td>{{ request.name }}</td>
+          <td>{{ request.major }}</td>
+          <td>
+            <button class="btn-accept" (click)="acceptRequest(request.id)">Accept</button>
+            <button class="btn-reject" (click)="rejectRequest(request.id)">Reject</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

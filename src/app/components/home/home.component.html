@@ -1,0 +1,32 @@
+<app-search></app-search>
+<!-- <app-tags></app-tags> -->
+<app-not-found
+[visible]="!posts || !posts.length"
+resetLinkText="Reset Search"
+>
+</app-not-found>
+
+<ul>
+  <li *ngFor="let post of posts">
+      <a routerLink="/post/{{post.id}}">
+        <img [src]="post.companyImage" [alt]="post.company"/>
+          <div class="content">
+         
+
+              <div class="company">
+                  {{post.company}}
+              </div>
+
+              <div class="shortDescription">
+                {{post.description}}
+              </div>
+
+              <div class="location">
+                {{post.location}}
+              </div>
+              
+
+          </div>    
+      </a>
+  </li>
+</ul>

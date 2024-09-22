@@ -1,0 +1,13 @@
+<div class="input-container">
+    <label>{{label}}</label>
+    <div>
+      <input [type]="type" [placeholder]="label" [formControl]="FormControl" />
+    </div>
+  
+    <input-validation
+      [control]="control"
+      [showErrorsWhen]="showErrorsWhen"
+    >
+    </input-validation>
+  </div>
+  
